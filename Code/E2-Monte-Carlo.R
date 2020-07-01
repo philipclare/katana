@@ -9,10 +9,8 @@
 #-----------------------------------------------------------------------------
 
 # 1.1 Specify paths
-.libPaths("C:/Users/pjclare/Documents/My Dropbox/R Library") # R library path
-workdir <- "C:/Users/pjclare/Cloudstor/Stats/Topic 6 - Katana/"
-# .libPaths("/home/z3312911/RPackages")
-# workdir <- "/home/z3312911/methodssim/"
+.libPaths("/home/z3312911/RPackages") # Change to folder where R packages can be saved
+workdir <- "/home/z3312911/examples/" # Change to folder where job files are saved
 
 # 1.2 Check libraries, install missing packages, update old packages, and then load required packages
 libs <- c("dqrng","lme4","dplyr","tidyverse")
@@ -27,8 +25,7 @@ lapply(libs, library, character.only = TRUE)
 library("faux")
 
 # 1.3 Define arguments passed through to R from Katana
-# stream <- commandArgs(trailingOnly = TRUE)
-stream <- 1
+stream <- commandArgs(trailingOnly = TRUE) # This is passed to R by the PBS script
 
 # 1.4 Set seed and stream
 dqset.seed(56418,stream)
@@ -94,8 +91,6 @@ sim_res <- matrix(unlist(lapply(rep(1, 1000), function (x) {
   results <- coef(summary(mod_sim))["cat",]
   results[1:2]
 })),ncol=2,byrow=TRUE)
-
-sim_res <- lapply(rep(1, 10), simulate(x))
 
 ##############################################################################
 # 3. Save results to be combined later

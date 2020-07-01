@@ -9,10 +9,8 @@
 #-----------------------------------------------------------------------------
 
 # 1.1 Specify paths
-.libPaths("C:/Users/pjclare/Documents/My Dropbox/R Library") # R library path
-workdir <- "C:/Users/pjclare/Cloudstor/Stats/Topic 6 - Katana/"
-# .libPaths("/home/z3312911/RPackages")
-# workdir <- "/home/z3312911/methodssim/"
+.libPaths("/home/z3312911/RPackages") # Change to folder where R packages can be saved
+workdir <- "/home/z3312911/examples/" # Change to folder where job files are saved
 
 # 1.2 Check libraries, install missing packages, update old packages, and then load required packages
 libs <- c("mice","miceadds","parallel")
