@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#PBS -N IMPUTATION_EXAMPLE
+#PBS -l select=1:ncpus=10:mem=40gb
+#PBS -l walltime=12:00:00
+#PBS -M p.clare@unsw.edu.au
+#PBS -m ae
+#PBS -j oe
+#PBS -k oed
+
+cd $PBS_O_WORKDIR
+
+module purge
+module add R/3.6.1
+ 
+Rscript /home/z3312911/examples/E1-Imputation.R
