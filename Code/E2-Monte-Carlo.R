@@ -12,7 +12,7 @@
 .libPaths("/home/z3312911/RPackages") # Change to folder where R packages can be saved
 workdir <- "/home/z3312911/examples/" # Change to folder where job files are saved
 
-# 1.2 Check libraries, install missing packages, update old packages, and then load required packages
+# 1.2 Check libraries, install missing packages, update old packages, and then load packages
 libs <- c("dqrng","lme4","dplyr","tidyverse")
 install <- !libs %in% installed.packages() | libs %in% old.packages()
 if (any(install)) {
